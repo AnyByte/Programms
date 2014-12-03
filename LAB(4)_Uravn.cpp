@@ -15,22 +15,27 @@ double fun(double x)
 
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	const double e = 0.000001;
 	double x0, x, a, b, t;
 	int n = 0;
+	cout << "Метод простой итерации" << endl;
+	cout << "Введите переменную X: ";
 	cin >> x;
 	x0 = x - 1;
 	while (abs(x - x0) > e)
 	{
 		x0 = x;
 		x = cos(x0);
-			n = n + 1;
-		
+		n = n + 1;
+
 	}
-	cout << x << ";" << n << endl;
+	cout << "Корень: " << x << ' ' << "Кол-во шагов: " << n << endl << endl;
 	n = 0;
+	cout << "Метод половинного деления" << endl;
+	cout << "Введите переменные A и B: " << endl;
 	cin >> a >> b;
-	do 
+	do
 	{
 		n++;
 		t = (b + a) / 2;
@@ -38,8 +43,10 @@ int main()
 		else b = t;
 	} while (abs(a - b) >= e);
 	x = (a + b) / 2;
-	cout << x << ";" << n <<endl;
+	cout << "Корень: " << x << ' ' << "Кол-во шагов: " << n << endl << endl;
 	n = 0;
+	cout << "Метод Ньютона" << endl;
+	cout << "Введите переменную X: ";
 	cin >> x;
 	do
 	{
@@ -47,6 +54,6 @@ int main()
 		x0 = x;
 		x = fun2(x0);
 	} while (abs(x - x0) >= e);
-	cout << x << ";" << n << endl;
+	cout << "Корень: " << x << ' ' << "Кол-во шагов: " << n << endl << endl;
 	return 0;
 }
