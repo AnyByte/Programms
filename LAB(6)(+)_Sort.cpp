@@ -28,7 +28,6 @@ void choicesSort(int* y, int n) // сортировка выбором
 	int comp = 0;
 	int change = 0;
 	int b = 0;
-	int k = 1;
 	for (int j = 0; j < n; j++)
 	{
 		b = j;
